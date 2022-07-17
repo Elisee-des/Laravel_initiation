@@ -38,4 +38,9 @@ class ArticleController extends Controller
         return view('contact');
     }
 
+    public function apropos()
+    {
+        return view('apropos');
+    }
+
 }
