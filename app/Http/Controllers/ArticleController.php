@@ -13,8 +13,29 @@ class ArticleController extends Controller
             'Ma description'
         ];
 
-        return view('article', [
+        return view('articles', [
             'articles' => $articles
         ]);
     }
+
+    public function show($id)
+    {
+        $articles = [
+            1 => "Mon titre 1",
+            2 => "Mon titre 2"
+        ];
+
+        $article = $articles[$id] ?? 'Page de titre';
+
+        return view('article', [
+            'article' => $article
+        ]);
+
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
 }

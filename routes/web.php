@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ArticleController::class, 'index']);
+Route::get('/', [ArticleController::class, 'index'])->name('accueil');
+Route::get('/article/{id}', [ArticleController::class, 'show'])->whereNumber('id');
+Route::get('/contactez-nous', [ArticleController::class, 'contact'])->name('contact');
 
 // Route::get('/article', function () {
 //     return response()->json([
