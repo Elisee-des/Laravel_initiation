@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ArticleController::class, 'index']);
 
-Route::get('/article', function () {
-    return response()->json([
-        'titre' => 'Mon titre',
-        'description' => 'Ma description'
-    ]);
-});
+// Route::get('/article', function () {
+//     return response()->json([
+//         'titre' => 'Mon titre',
+//         'description' => 'Ma description'
+//     ]);
+// });
 
-Route::get('/articles', function () {
-    return view('articles');
-});
+// Route::get('/articles', function () {
+//     return view('articles');
+// });
